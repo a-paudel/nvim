@@ -18,4 +18,13 @@ return {
       vim.treesitter.language.register("templ", "templ")
     end,
   },
+  {
+    "neovim/nvim-lspconfig",
+    init = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.unocss.setup({
+        filetypes = { "html", "svelte", "typescriptreact", "javascriptreact", "templ" },
+      })
+    end,
+  },
 }
